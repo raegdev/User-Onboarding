@@ -1,0 +1,42 @@
+import React, { useState, useEffect } from "react";
+import { withFormik, Form, Field } from "formik";
+import * as Yup from "yup";
+import axios from "axios";
+
+function OnboardingForm() {
+    return (
+      <Form>
+        <Field type='name' name='name' placeholder='Name' />  
+        <Field type="email" name="email" placeholder="Email" />
+        <Field type="password" name="password" placeholder="Password" />
+        <label className="checkbox-container">
+            TOS Accepted
+            <Field
+                type="checkbox"
+                name="terms"
+                checked={values.terms} />
+            <span className="checkmark" />
+        </label>
+        <button>Submit!</button>
+      </Form>
+    );
+  }
+  
+  const FormikOnboardingForm = withFormik({
+    mapPropsToValues({ name, email, password, terms }) {
+      return {
+        name: name || '',
+        email: email || "",
+        password: password || "",
+        terms: terms || false
+      };
+    },
+  
+    handleSubmit(values) {
+      console.log(values);
+      //THIS IS WHERE YOU DO YOUR FORM SUBMISSION CODE... HTTP REQUESTS, ETC.
+    }
+  })(OnboardingForm);
+  
+  export default FormikOnboardingForm;
+
