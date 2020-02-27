@@ -9,15 +9,8 @@ function OnboardingForm() {
         <Field type='name' name='name' placeholder='Name' />  
         <Field type="email" name="email" placeholder="Email" />
         <Field type="password" name="password" placeholder="Password" />
-        <label className="checkbox-container">
-            TOS Accepted
-            <Field
-                type="checkbox"
-                name="terms"
-                checked={values.terms} />
-            <span className="checkmark" />
-        </label>
-        <button>Submit!</button>
+        <Field type='checkbox' name='TOS' />
+        <input type='submit'/>
       </Form>
     );
   }
