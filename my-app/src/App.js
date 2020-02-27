@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import FormikOnboardingForm from './components/Form';
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <header className="App-header">
         <h1>User Onboarding</h1>
       </header>
+      <FormikOnboardingForm />
     </div>
   );
 }
